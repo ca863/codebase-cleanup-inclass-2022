@@ -6,19 +6,7 @@
 #products = products_df.to_dict("records")
 
 import os
-
-
-def to_usd(my_price):
-    """
-    Converts a numeric value to usd-formatted string, for printing and display purposes.
-    
-    Param: my_price (int or float) like 4000.444444
-    
-    Example: to_usd(4000.444444)
-    
-    Returns: $4,000.44
-    """
-    return '${:,.2f}'.format(my_price)
+from app.utils import to_usd
 
 # checks to see if a products.csv file exists. If not, it uses the default
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
